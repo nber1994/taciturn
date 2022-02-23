@@ -3,7 +3,7 @@
     <article>
         <h1>{{ .Title }}</h1>
         <div id="common-a">
-            <b><time>{{ .Date.Format (default "2006-01-02" .Site.Params.dateFmt) }}</time></b>
+            <b><time>{{ .Date.Format (default "2006-01-02" .Site.Params.dateFmt) }}</time></b>&nbsp;&nbsp;&nbsp;
             {{ range .Params.categories }}
             <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"> ❐{{ . }}</a>
             {{ end }}
@@ -12,6 +12,7 @@
             {{ end }}
         </div>
     </article>
+        <hr>
     </br>
     <aside id="toc">
         {{ .TableOfContents }}
@@ -19,6 +20,7 @@
         <div id="body">
             {{ .Content }}
         </div>
+        <hr>
 </main>
 {{ partial "sidebar.html" . }}
 {{ end }}
