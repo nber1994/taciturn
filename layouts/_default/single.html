@@ -11,10 +11,14 @@
             <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">✎ {{ . }}</a>
             {{ end }}
         </div>
-        <div>
+    </article>
+    </br>
+    <aside id="toc">
+        {{ .TableOfContents }}
+    </aside>
+        <div id="body">
             {{ .Content }}
         </div>
-    </article>
 </main>
 {{ partial "sidebar.html" . }}
 {{ end }}
